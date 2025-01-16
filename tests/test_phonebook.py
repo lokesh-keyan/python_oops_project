@@ -1,5 +1,5 @@
 import unittest
-from UnitTesting.phonebook.phonebook import PhoneBook
+from src.phonebook.phonebook import PhoneBook
 
 class PhoneBookTest(unittest.TestCase):
     def setUp(self) -> None:
