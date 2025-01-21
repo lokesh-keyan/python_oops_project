@@ -30,5 +30,5 @@ def test_single_sign_on_receives_correct_token():
     mock_sso_resgistry.is_valid = Mock(side_effect=confirm_token(correct_token))
     service = MyService(mock_sso_resgistry)
     wrong_token = SSOToken
-    service.handle(Request("Alice"), wrong_token)
+    service.handle(Request("Alice"), wrong_token) # this will still pass because, all its checking is if the object has been passed. its not checking the value of the object
     mock_sso_resgistry.is_valid.assert_called_with(correct_token)
